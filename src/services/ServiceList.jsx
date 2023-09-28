@@ -6,7 +6,7 @@ import wetherImg from '../assets/images/weather.png'
 import guideImg from '../assets/images/guide.png'
 import customizationImg from '../assets/images/customization.png'
 
-const serviceData =[
+const servicesData =[
     {
         imgUrl: wetherImg,
         title: "Calculate Weather",
@@ -27,7 +27,11 @@ const serviceData =[
 const ServiceList = () => {
   return <>
   {
-    servicesData.map((item,index)=> <Col lg='3' key={index}><ServiceCard item={item}/></Col>)
+    servicesData.map((item,index)=>(
+         <Col lg='3' key={index}>
+            <ServiceCard item={item}/>
+            </Col>
+    ))
   }
   </>
    }

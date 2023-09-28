@@ -7,15 +7,15 @@ const SearchBar = () => {
     
     const locationRef = useRef('')
     const distanceRef = useRef(0)
-    const maxGroupsizeRef = useRef(0)
+    const maxGroupSizeRef = useRef(0)
     
     const searchHandler =()=>{
         const location = locationRef.current.value
         const distance = distanceRef.current.value
-        const maxGroupsize = maxGroupsizeRef.current.value
+        const maxGroupSize = maxGroupSizeRef.current.value
 
-        if (location===''|| distance===''||maxGroupsize===''){
-            return alert('All fields are required')
+        if (location===''|| distance===''||maxGroupSize===''){
+            return alert('All fields are required!')
         }
 
     }
@@ -46,7 +46,7 @@ const SearchBar = () => {
                     </span>
                     <div>
                         <h6>Max People</h6>
-                        <input type='number' placeholder='0' ref={maxGroupsizeRef} />
+                        <input type='number' placeholder='0' ref={maxGroupSizeRef} />
                     </div>
                 </FormGroup>
                 <span className='search__icon' type='submit' onClick={searchHandler}>

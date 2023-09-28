@@ -5,13 +5,14 @@ import heroImg from '../assets/images/hero-img01.jpg'
 import heroImg02 from '../assets/images/hero-img02.jpg'
 import heroVideo from '../assets/images/hero-video.mp4'
 import worldImg from '../assets/images/world.png'
-import subtitle from './../shared/Subtitle'
+import Subtitle from './../shared/Subtitle';
+import experienceImg from '../assets/images/experience.png'
 import SearchBar from '../shared/SearchBar';
 import ServiceList from '../services/ServiceList';
-import FeaturedTour from '../components/Featured-tour/FeaturedTour';
-import MasonryImagesGallery from '../components/image-gallery/MasonryImagesGallery';
-import Subtitle from './../shared/Subtitle';
-import Testimonial from '../components/Testimonial/Testimonial';
+import FeaturedTourList from  '../components/Featured-tours/FeaturedTourList'
+// import MasonryGalleryImages from '../components/Gallery-Images/MasonryGalleryImages';
+import Testimonials from '../components/Testimonial/Testimonials';
+import Newsletter from '../shared/Newsletter';
 const Home = () => {
   return <>
     <section>
@@ -20,7 +21,8 @@ const Home = () => {
           <Col lg='6'>
             <div className="hero__content">
               <div className="hero__subtitle d-flex align-items-center">
-                <Subtitle subtile={'known Before You Go'} />
+                <Subtitle subtitle={'known Before You Go'} />
+                <img src={worldImg} alt="" />
               </div>
               <h1>Tarveling opens the door to creating
                 <span className='highlight'>memories</span></h1>
@@ -44,7 +46,7 @@ const Home = () => {
               <img src={heroImg02} alt='' />
             </div>
           </Col>
-          <SearchBar></SearchBar>
+          <SearchBar />
         </Row>
       </Container>
     </section>
@@ -54,72 +56,70 @@ const Home = () => {
           <Col lg='3'>
             <h5 className="service__subtitle">what we serve</h5>
             <h2 className='servide__title'>We offer our best services</h2>
-
           </Col>
           <ServiceList />
         </Row>
       </Container>
     </section>
-
     <section>
       <Container>
         <Row>
-          <Col lg='12' className='mb-5'>
-            <subtitle subtitle={Explore} />
-            <h2 className="feature__tour-title">Our feature tours</h2>
+          <Col lg='12' classname="mb-5">
+            <Subtitle subtitle={'Explore'}/>
+            <h2 className='featured_tour-title'>Our featured tours</h2>
           </Col>
-          <FeaturedTour />
+          <FeaturedTourList/>
         </Row>
       </Container>
     </section>
+
     <section>
       <Container>
         <Row>
           <Col lg='6'>
             <div className="experience__content">
-              <subtitle subtitle={'Experience'} />
-              <h2>With our all Experience <br /> we will serve you</h2>
-              <p>Enjoy the trip is also an happiness<br />
-                hapy happy happy happy happy
+              <Subtitle subtitle={'Experience'}/>
+              <h2>With our all experience <br/> we will serve you</h2>
+              <p>Lorem ipsum dolor ait amet, consectetur adipisicing elit.
+                <br/>
+                Quas aliquam, hic tempora inventore suscipit unde.
+
               </p>
             </div>
-            <div className="counter_wrapper d-flex align-items-center gap-5">
+            <div className="counter__wrapper d-flex align-items-center gap-5">
               <div className="counter__box">
-                <span>12k+</span>
-                <h1>Succesful Trip</h1>
+              <span>12k+</span>
+              <h6>Successfull Trip</h6>
               </div>
               <div className="counter__box">
-                <span>2k+</span>
-                <h1>Regular clients</h1>
+              <span>2k+</span>
+              <h6>regular clients</h6>
               </div>
               <div className="counter__box">
-                <span>15</span>
-                <h1>Years experience</h1>
+              <span>15</span>
+              <h6>Years experience</h6>
               </div>
-
             </div>
+
           </Col>
           <Col lg='6'>
-            <div className='experience__img'>
-              <img src={experienceImg} alt="" />
+            <div className="experience__img">
+              <img src={experienceImg} alt=''/>
             </div>
           </Col>
         </Row>
       </Container>
     </section>
+
     <section>
       <Container>
         <Row>
           <Col lg='12'>
-            <Subtitle subtitle={"Gallery"}>
-              <h2 className="gallery__title">
-                Vist our customer tour gallery
-              </h2>
-              Vist our customer tour gallery
-            </Subtitle>
+            <Subtitle subtitle={'Gallery'}/>
+            <h2 clasNmae="gallery__title">Visit Our customers tour gallery</h2>
           </Col>
           <Col lg='12'>
-            <MasonryImagesGallery />
+            {/* <MasonryGalleryImages/> */}
           </Col>
         </Row>
       </Container>
@@ -128,17 +128,16 @@ const Home = () => {
       <Container>
         <Row>
           <Col lg='12'>
-            <Subtitle subtitle={'Fans Love'} />
-            <h2 className="testimonial__title">WHta our fans say about us</h2>
-
+            <Subtitle subtitle={'Fans Love'}/>
+            <h2 className="testimonial_title">What our fans say about us</h2>
           </Col>
-          <Col>
-          <Testimonial/>
+          <Col lg='12'>
+            <Testimonials/>
           </Col>
         </Row>
-
       </Container>
     </section>
+    <Newsletter/>
   </>
 
 };
