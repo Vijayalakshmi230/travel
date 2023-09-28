@@ -9,7 +9,9 @@ import subtitle from './../shared/Subtitle'
 import SearchBar from '../shared/SearchBar';
 import ServiceList from '../services/ServiceList';
 import FeaturedTour from '../components/Featured-tour/FeaturedTour';
+import MasonryImagesGallery from '../components/image-gallery/MasonryImagesGallery';
 import Subtitle from './../shared/Subtitle';
+import Testimonial from '../components/Testimonial/Testimonial';
 const Home = () => {
   return <>
     <section>
@@ -117,9 +119,24 @@ const Home = () => {
             </Subtitle>
           </Col>
           <Col lg='12'>
-            
+            <MasonryImagesGallery />
           </Col>
         </Row>
+      </Container>
+    </section>
+    <section>
+      <Container>
+        <Row>
+          <Col lg='12'>
+            <Subtitle subtitle={'Fans Love'} />
+            <h2 className="testimonial__title">WHta our fans say about us</h2>
+
+          </Col>
+          <Col>
+          <Testimonial/>
+          </Col>
+        </Row>
+
       </Container>
     </section>
   </>
